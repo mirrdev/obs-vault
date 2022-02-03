@@ -53,3 +53,10 @@ git grep Hexlet 5120bea3
 # rev-list возвращает список хешей коммитов
 git grep hexlet $(git rev-list --all)
 ```
+
+
+Показывает сокращенный вывод
+git log --oneline
+git checkout <хеш коммита> - не меняет ветки только содержимое рабочей директории
+git checkout main
+git branch

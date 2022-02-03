@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hexlet/git/links.md",
+            "file": "git.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hexlet/git/links.md",
+                "file": "git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,14 +89,15 @@
   },
   "active": "4c08532746657703",
   "lastOpenFiles": [
-    "Hexlet/git/links.md",
     "git.md",
+    "Hexlet/git/links.md",
+    "Hexlet/git/Переключить Git репозиторий с HTTPS на SSH.md",
     "Hexlet/git/Именование комитов.md",
-    "Hexlet/git/Без названия 1.md",
     "Hexlet/git/cheat/Основы.md",
-    "Без названия.md",
-    "Hexlet/git/cheat/git-cheat-sheet.pdf",
+    "Current.md",
     "Основы командной строки.md",
-    "Current.md"
+    "Без названия.md",
+    "Без названия 1.md",
+    "Без названия 2.md"
   ]
 }
