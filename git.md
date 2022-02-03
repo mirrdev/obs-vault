@@ -60,3 +60,7 @@ git log --oneline
 git checkout <хеш коммита> - не меняет ветки только содержимое рабочей директории
 git checkout main
 git branch
+-   У `git rm` есть опция `--cached`. Если её использовать, файл будет удалён из индекса, но не из рабочей директории
+![git stash](https://cdn2.hexlet.io/derivations/image/original/eyJpZCI6ImY4ZjU4MmFjY2FlNTQ1NzY4NTM2OTUwOTVkYmUwODJhLmpwZyIsInN0b3JhZ2UiOiJjYWNoZSJ9?signature=c13cc2d6408a8f67a8eda11bb07ba0e8fcde26053081bc6ec1cf64638aa7977e)
+git stash 
+git stash pop
