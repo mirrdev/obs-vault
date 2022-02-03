@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "4c08532746657703",
+        "id": "41cc134379ef4a57",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "progress/plan.md",
+            "file": "5 After training.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "progress/plan.md",
+                "file": "5 After training.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "4c08532746657703",
+  "active": "41cc134379ef4a57",
   "lastOpenFiles": [
-    "progress/plan.md",
-    "progress/compleded.md",
-    "progress/diary.md",
+    "5 After training.md",
+    "Progress/1 Plan training.md",
+    "Untitled Kanban.md",
+    "Progress/3 Diary every day.md",
+    "Progress/4 Diary Monday.md",
+    "Progress/2 Compleded training.md",
     "git.md",
     "Hexlet/git/links.md",
     "Hexlet/git/Переключить Git репозиторий с HTTPS на SSH.md",
-    "Hexlet/git/Именование комитов.md",
-    "Hexlet/git/cheat/Основы.md",
-    "Current.md",
-    "Основы командной строки.md"
+    "Hexlet/git/Именование комитов.md"
   ]
 }
