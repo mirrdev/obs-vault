@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Progress/3 Day planner.md",
+            "file": "Hexlet/JS/Конспект/JS Объекты.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Progress/3 Day planner.md",
+                "file": "Hexlet/JS/Конспект/JS Объекты.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "41cc134379ef4a57",
   "lastOpenFiles": [
+    "Hexlet/JS/Конспект/JS Объекты.md",
+    "git/Добавление SSH ключа.md",
+    "git/Именование комитов.md",
+    "Dev tools/visual code plugins.md",
     "Progress/3 Day planner.md",
     "Progress/4 Diary Monday.md",
-    "Dev tools/visual code plugins.md",
     "Dev tools/settings.json.md",
     "links.md",
-    "Hexlet/git/links.md",
-    "Hexlet/git/Добавление SSH ключа.md",
-    "Hexlet/git/Именование комитов.md",
-    "Hexlet/git/Переключить Git репозиторий с HTTPS на SSH.md",
-    "Progress/1 Plan training.md"
+    "git/links.md",
+    "git/Переключить Git репозиторий с HTTPS на SSH.md"
   ]
 }
