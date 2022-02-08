@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hexlet/JS/Конспект/JS Объекты.md",
+            "file": "Linux.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hexlet/JS/Конспект/JS Объекты.md",
+                "file": "Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "41cc134379ef4a57",
   "lastOpenFiles": [
+    "Linux.md",
     "Hexlet/JS/Конспект/JS Объекты.md",
     "git/Добавление SSH ключа.md",
     "git/Именование комитов.md",
@@ -97,7 +98,6 @@
     "Progress/4 Diary Monday.md",
     "Dev tools/settings.json.md",
     "links.md",
-    "git/links.md",
-    "git/Переключить Git репозиторий с HTTPS на SSH.md"
+    "git/links.md"
   ]
 }
