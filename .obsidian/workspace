@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Hexlet/JS/Конспект/JS Функции.md",
+            "file": "Hexlet/JS/Конспект/JS Автоматическое тестирование.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hexlet/JS/Конспект/JS Функции.md",
+                "file": "Hexlet/JS/Конспект/JS Автоматическое тестирование.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "41cc134379ef4a57",
   "lastOpenFiles": [
+    "Hexlet/JS/Конспект/JS Автоматическое тестирование.md",
     "Hexlet/JS/Конспект/JS Функции.md",
     "Hexlet/JS/Конспект/JS Объекты.md",
     "Dev tools/Linux.md",
@@ -97,7 +98,6 @@
     "Dev tools/visual code plugins.md",
     "Progress/3 Day planner.md",
     "Progress/4 Diary Monday.md",
-    "Dev tools/settings.json.md",
-    "links.md"
+    "Dev tools/settings.json.md"
   ]
 }
