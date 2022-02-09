@@ -3,7 +3,7 @@
 Объект – тип данных в JavaScript, с помощью которого представляют связанный набор данных. Это позволяет оперировать данными как единым целым. Например, любой объект реального мира можно описать объектом в JavaScript. То же самое относится и к математическsим объектам, например — фигурам.
 
 ```javascript
-const user = { name: 'Vasya', married: true, age: 25 };
+const user = { name: "Vasya", married: true, age: 25 };
 
 const rectangle = { width: 10, height: 5 };
 ```
@@ -14,7 +14,7 @@ const rectangle = { width: 10, height: 5 };
 
 ```javascript
 const user = {
-  name: 'Vasya',
+  name: "Vasya",
   married: true,
   age: 25,
 };
@@ -40,32 +40,36 @@ JavaScript поддерживает альтернативный способ о
 
 ```javascript
 // имена свойств хранятся внутри объекта в виде строк.
-user['name']; // 'Vasya'
-rectangle['width']; // 10
-user['company']; // undefined
+user["name"]; // 'Vasya'
+rectangle["width"]; // 10
+user["company"]; // undefined
 ```
 
 Зачем нужен такой способ доступа? В реальном использовании объектов часто встречаются алгоритмы, когда имя свойства может меняться в процессе обработки. Обращение к свойству через точку не позволяет задавать имя динамически, а способ через скобки — позволяет:
 
 ```javascript
-const user = { name: 'Vasya', married: true, age: 25 };
+const user = { name: "Vasya", married: true, age: 25 };
 
-let propertyName = 'name';
-user[propertyName]; // 'Vasya' 
+let propertyName = "name";
+user[propertyName]; // 'Vasya'
 
-propertyName = 'married';
-user[propertyName]; // true 
+propertyName = "married";
+user[propertyName]; // true
 ```
 
 Подробнее про такое использование мы поговорим в одном из следующих уроков.
 
-------
+---
+
 #### Самостоятельная работа
 
 1. Запустите REPL
 2. Создайте внутри него объект, выполните обращение к его свойствам разными способами
-------
+
+---
+
 #### Дополнительные материалы
+
 1. [Документация](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
 ## Модификация—JS: Объекты
@@ -73,13 +77,13 @@ user[propertyName]; // true
 Для создания и обновления значений свойств в объекте используется одна и та же операция — присваивание. Для несуществующих свойств она запишет новый элемент, для существующих — перезапишет новым значением:
 
 ```javascript
-const user = { name: 'Vasya', married: true, age: 25 };
+const user = { name: "Vasya", married: true, age: 25 };
 
 user.married = false;
 // То же самое
 // user['married'] = false;
 
-user.surname = 'Petrov';
+user.surname = "Petrov";
 // То же самое
 // user['surname'] = 'Petrov';
 
@@ -90,11 +94,11 @@ console.log(user);
 Несмотря на то, что объект объявлен как константа, он меняется. Причина такого поведения точно такая же, как и в случае массивов. В константе хранится не сам объект, а ссылка на него. Это значит, что менять объект можно, но заменить объект на другой – нельзя:
 
 ```javascript
-const user = { name: 'Maria' };
-user.name = 'Igor';
+const user = { name: "Maria" };
+user.name = "Igor";
 
 // Возникнет ошибка
-user = { name: 'Mike' }; // Boom!
+user = { name: "Mike" }; // Boom!
 ```
 
 Подробнее об этом - в одном из следующих уроков.
@@ -104,8 +108,8 @@ user = { name: 'Mike' }; // Boom!
 ```javascript
 const course = {};
 
-course.name = 'Хекслет – JS: Объекты';
-course.description = 'Самый классный курс на свете, не проходите мимо, дети!';
+course.name = "Хекслет – JS: Объекты";
+course.description = "Самый классный курс на свете, не проходите мимо, дети!";
 
 console.log(course.name); // 'Хекслет – JS: Объекты'
 
@@ -119,7 +123,7 @@ console.log(course);
 Удалить элемент из объекта можно с помощью оператора `delete`:
 
 ```javascript
-const user = { name: 'Vasya', wrongProp: 'bug' };
+const user = { name: "Vasya", wrongProp: "bug" };
 
 delete user.wrongProp;
 
@@ -139,7 +143,7 @@ https://repl.it/@hexlet/js-objects-syntax-add-update-delete-values
 const company = {};
 
 // Поменять объект можно
-company.name = 'Hexlet';
+company.name = "Hexlet";
 
 // Заменить ссылку нельзя
 company = {}; // Boom!
@@ -153,9 +157,9 @@ object = {};
 Ссылочная природа влияет и на сравнение. Объекты равны между собой не тогда, когда у них одинаковая структура, а когда это один и тот же объект:
 
 ```javascript
-const company = { name: 'Hexlet' };
+const company = { name: "Hexlet" };
 
-company === { name: 'Hexlet' }; // false
+company === { name: "Hexlet" }; // false
 
 const copyOfCompany = company; // передается ссылка
 
@@ -178,7 +182,7 @@ console.log(copyOfCompany); // { name: 'Hexlet', createdAt: 2012 }
 
 ```javascript
 const changeObj = (o) => {
-  o.key = 'value';
+  o.key = "value";
 };
 
 const obj = {};
@@ -192,7 +196,7 @@ console.log(obj); // { key: 'value' };
 Рассмотрим пример, в котором используется объект. Напишем функцию, которая принимает на вход путь до файла и возвращает информацию об этом файле в виде объекта.
 
 ```javascript
-const filepath = '/path/to/index.js';
+const filepath = "/path/to/index.js";
 const fileinfo = getFileInfo(filepath);
 // {
 //     extension: js
@@ -200,39 +204,39 @@ const fileinfo = getFileInfo(filepath);
 // };
 ```
 
-В Node.js встроен модуль *path*, который может быстро извлечь нужные данные. Именно им и нужно пользоваться при написании реального кода, здесь же мы фокусируемся не на способе получения данных, а на формировании объекта.
+В Node.js встроен модуль _path_, который может быстро извлечь нужные данные. Именно им и нужно пользоваться при написании реального кода, здесь же мы фокусируемся не на способе получения данных, а на формировании объекта.
 
 Для начала нам нужно извлечь имя файла. Это можно сделать, используя метод `split()`.
 
 ```javascript
-import _ from 'lodash';
+import _ from "lodash";
 
 // Разделяем путь на промежуточные директории и файл
-const parts = filepath.split('/');
+const parts = filepath.split("/");
 // Извлекаем имя файла
 // last извлекает последний элемент из массива
-const filename = _.last(parts); 
+const filename = _.last(parts);
 ```
 
 Затем, точно таким же способом, можно получить и расширение:
 
 ```javascript
-const extension = _.last(filename.split('.'));
+const extension = _.last(filename.split("."));
 ```
 
 Теперь, объединяя все вместе, реализуем нужную функцию:
 
 ```javascript
 const getFileInfo = (filepath) => {
-  const parts = filepath.split('/');
-  const filename = _.last(parts); 
-  const extension = _.last(filename.split('.'));
+  const parts = filepath.split("/");
+  const filename = _.last(parts);
+  const extension = _.last(filename.split("."));
 
   // В значения вместо переменных подставятся нужные значения
   const info = { filename: filename, extension: extension };
 
   return info;
-}
+};
 ```
 
 В примере выше объект создается сразу, когда все данные уже готовы. Иногда делают по-другому, инициализируют объект в самом начале и постепенно наполняют его данными:
@@ -242,15 +246,15 @@ const getFileInfo = (filepath) => {
   // Инициализация объекта
   const info = {};
 
-  const parts = filepath.split('/');
-  const filename = _.last(parts); 
+  const parts = filepath.split("/");
+  const filename = _.last(parts);
   info.filename = filename;
 
-  const extension = _.last(filename.split('.'));
+  const extension = _.last(filename.split("."));
   info.extension = extension;
 
   return info;
-}
+};
 ```
 
 Какой способ предпочесть? В подавляющем большинстве ситуаций первый способ лучше. Когда объект создается сразу со всеми данными, то его структура очевидна с первого взгляда. Во втором примере придется пробежаться глазами по всему коду чтобы понять что же получится в итоге. С другой стороны, второй способ нужен в ситуациях, когда объект заполняется по условиям, которые могут не выполняться:
@@ -281,8 +285,8 @@ const info = { filename, extension };
 Как показывает жизнь, этот подход оказался очень удобным и практичным. К тому же он сочетается с обычным способом создать объект. JavaScript позволяет миксовать разные способы определения в рамках одного объекта:
 
 ```javascript
-const filename = 'hexlet';
-const ext = 'jpg';
+const filename = "hexlet";
+const ext = "jpg";
 
 const info = { filename, extension: ext };
 // Порядок не важен, можно было и так
@@ -308,9 +312,15 @@ if (obj.key === undefined) {
 // Вход
 
 const bag = [
-  'apple', 'banana', 'pear',
-  'apricot', 'apple', 'banana',
-  'apple', 'orange', 'pear',
+  "apple",
+  "banana",
+  "pear",
+  "apricot",
+  "apple",
+  "banana",
+  "apple",
+  "orange",
+  "pear",
 ];
 
 // Выход
@@ -379,31 +389,32 @@ const countFruits = (fruits) => {
 ```javascript
 let value;
 
-value ?? 'wow'; // 'wow'
+value ?? "wow"; // 'wow'
 
 value = null;
-value ?? 'wow'; // 'wow'
+value ?? "wow"; // 'wow'
 
 value = true;
-value ?? 'wow'; // true
+value ?? "wow"; // true
 for (const name of fruits) {
   result[name] = (result[name] ?? 0) + 1;
 }
 ```
 
-------
+---
 
 #### Дополнительные материалы
+
 1. [Функция has из библиотеки Lodash](https://lodash.com/docs/#has)
 
 ## Обход свойств объекта—JS: Объекты
 
-Объект в JavaScript, в отличие от массива, не является коллекцией. Его нельзя обходить как обычный массив с помощью цикла *for..of*, хотя подобная задача иногда возникает. Например, когда мы хотим распечатать все свойства на экран, или когда свойства в объект добавляются динамически — то есть их имена могут меняться в процессе жизни объекта.
+Объект в JavaScript, в отличие от массива, не является коллекцией. Его нельзя обходить как обычный массив с помощью цикла _for..of_, хотя подобная задача иногда возникает. Например, когда мы хотим распечатать все свойства на экран, или когда свойства в объект добавляются динамически — то есть их имена могут меняться в процессе жизни объекта.
 
-В JavaScript для обхода объектов есть несколько способов. Самый простой – использовать конструкцию *for..in*, которая очень похожа на обычный цикл.
+В JavaScript для обхода объектов есть несколько способов. Самый простой – использовать конструкцию _for..in_, которая очень похожа на обычный цикл.
 
 ```javascript
-const course = { name: 'JS: React', slug: 'js-react' };
+const course = { name: "JS: React", slug: "js-react" };
 for (const prop in course) {
   console.log(`course.${prop} = ${course[prop]}`);
 }
@@ -411,12 +422,12 @@ for (const prop in course) {
 // course.slug = js-react
 ```
 
-Несмотря на простоту использования, *for..in* работает не совсем так, как может показаться. *for..in* выводит не только свойства самого объекта, но и свойства, добавленные в прототип этого объекта. Эту тему мы пока не проходили и дается она позже, но если в двух словах, то объекты в JavaScript могут быть связаны друг с другом и обращение к свойству в одном объекте может приводить к обращению (неявному) к свойству в другом объекте (прототипе). Мы уже сталкивались с таким поведением на практике, но пока обходили этот вопрос стороной.
+Несмотря на простоту использования, _for..in_ работает не совсем так, как может показаться. _for..in_ выводит не только свойства самого объекта, но и свойства, добавленные в прототип этого объекта. Эту тему мы пока не проходили и дается она позже, но если в двух словах, то объекты в JavaScript могут быть связаны друг с другом и обращение к свойству в одном объекте может приводить к обращению (неявному) к свойству в другом объекте (прототипе). Мы уже сталкивались с таким поведением на практике, но пока обходили этот вопрос стороной.
 
-Главное, что сейчас нужно понимать, в подавляющем большинстве случаев это нежелательное поведение. Именно поэтому *for..in* используется не так часто, как может показаться. Гораздо более распространенный способ – обходить ключи. Метод `Object.keys(obj)` позволяет получить массив всех ключей объекта:
+Главное, что сейчас нужно понимать, в подавляющем большинстве случаев это нежелательное поведение. Именно поэтому _for..in_ используется не так часто, как может показаться. Гораздо более распространенный способ – обходить ключи. Метод `Object.keys(obj)` позволяет получить массив всех ключей объекта:
 
 ```javascript
-const course = { name: 'JS: React', slug: 'js-react' };
+const course = { name: "JS: React", slug: "js-react" };
 
 const keys = Object.keys(course); // [ 'name', 'slug' ]
 ```
@@ -432,7 +443,7 @@ for (const key of keys) {
 Если ключи в процессе обхода не используются, то можно сразу получить массив значений свойств объекта. Это делает метод `Object.values(obj)`:
 
 ```javascript
-const course = { name: 'JS: React', slug: 'js-react' };
+const course = { name: "JS: React", slug: "js-react" };
 
 const values = Object.values(course); // [ 'JS: React', 'js-react' ]
 
@@ -444,7 +455,7 @@ for (const value of values) {
 Ну, и последний вариант, метод, который возвращает сразу ключи и значения объекта. То есть каждый элемент сам будет массивом, содержащим ключ и соответствующее ему значение — `[ key, value ]`. За это отвечает метод `Object.entries(obj)`:
 
 ```javascript
-const course = { name: 'JS: React', slug: 'js-react' };
+const course = { name: "JS: React", slug: "js-react" };
 
 const entries = Object.entries(course);
 // [[ 'name', 'JS: React' ], [ 'slug', 'js-react' ]]
@@ -472,7 +483,7 @@ const lessonMembers = {
 };
 
 findKeys(lessonMembers, 10); // ['foreach', 'operations']
-findKeys(lessonMembers, 3);  // ['syntax']
+findKeys(lessonMembers, 3); // ['syntax']
 ```
 
 Логика работы функции выглядит так:
@@ -503,24 +514,23 @@ https://repl.it/@hexlet/js-objects-for-of-find-keys
 
 ## Вложенные объекты—JS: Объекты
 
-
 Значением свойства объекта может быть всё, что угодно, включая другой объект или массив:
 
 ```javascript
-const user = { name: 'Vasya', married: true, age: 25 };
+const user = { name: "Vasya", married: true, age: 25 };
 
 // Добавим свойство friends со списком друзей
-user.friends = ['Kolya', 'Petya'];
+user.friends = ["Kolya", "Petya"];
 
 // Добавим свойство children со списком детей,
 // каждый ребёнок представлен отдельным объектом
 user.children = [
-  { name: 'Mila', age: 1 },
-  { name: 'Petr', age: 10 },
+  { name: "Mila", age: 1 },
+  { name: "Petr", age: 10 },
 ];
 
 // Добавим вложенный объект
-user.company = { name: 'Hexlet' };
+user.company = { name: "Hexlet" };
 
 console.log(user); // =>
 // { name: 'Vasya',
@@ -535,16 +545,16 @@ console.log(user); // =>
 
 ```javascript
 const user = {
-  name: 'Vasya',
+  name: "Vasya",
   married: true,
   age: 25,
-  friends: ['Kolya', 'Petya'],
+  friends: ["Kolya", "Petya"],
   children: [
-    { name: 'Mila', age: 1 },
-    { name: 'Petr', age: 10 },
+    { name: "Mila", age: 1 },
+    { name: "Petr", age: 10 },
   ],
   company: {
-    name: 'Hexlet'
+    name: "Hexlet",
   },
 };
 ```
@@ -552,7 +562,7 @@ const user = {
 В этом случае обращение к вложенным элементам происходит по цепочке:
 
 ```javascript
-user.friends[1];       // 'Petya'
+user.friends[1]; // 'Petya'
 user.children[0].name; // 'Mila'
 user.company.name; // 'Hexlet'
 ```
@@ -562,7 +572,7 @@ user.company.name; // 'Hexlet'
 В `console.log()` встроено одно ограничение. Если в объекте есть другие объекты на глубине больше второго уровня вложенности, то при выводе такого объекта на экран вместо объектов отобразится строка `[Object]`, а вместо массива `[Array]`.
 
 ```javascript
-const obj = { a: { b: { c: { key: 'value' }, e: [1, 2] } } };
+const obj = { a: { b: { c: { key: "value" }, e: [1, 2] } } };
 console.log(obj);
 // { a: { b: { c: [Object], e: [Array] } } }
 ```
@@ -574,7 +584,7 @@ console.log(JSON.stringify(obj));
 // {"a":{"b":{"c":{"key":"value"},"e":[1,2]}}}
 
 // Или форматированный вывод
-console.log(JSON.stringify(obj, null, '  '));
+console.log(JSON.stringify(obj, null, "  "));
 // {
 //   "a": {
 //     "b": {
@@ -596,9 +606,9 @@ console.log(JSON.stringify(obj, null, '  '));
 
 ```javascript
 // Добираемся до obj.one.two.three
-if (Object.hasOwn(obj, 'one')) {
-  if (Object.hasOwn(obj.one, 'two')) {
-    if (Object.hasOwn(obj.one.two, 'three')) {
+if (Object.hasOwn(obj, "one")) {
+  if (Object.hasOwn(obj.one, "two")) {
+    if (Object.hasOwn(obj.one.two, "three")) {
       // ...
     }
   }
@@ -613,7 +623,7 @@ if (Object.hasOwn(obj, 'one')) {
 
 ```javascript
 const obj = {};
-obj?.one?.two?.three // undefined
+obj?.one?.two?.three; // undefined
 ```
 
 Этот оператор никогда не приводит к ошибке. Он работает на любых типах данных и всегда возвращает либо `undefined`, либо значение указанного свойства, если оно существует.
@@ -624,7 +634,7 @@ obj?.one?.two?.three // undefined
 
 ```javascript
 const obj = {};
-obj?.one?.two?.three ?? 'defaultValue' // 'defaultValue'
+obj?.one?.two?.three ?? "defaultValue"; // 'defaultValue'
 ```
 
 Значение по умолчанию возвращается только в том случае, когда слева `undefined` или `null`. В этом смысле данный оператор совсем не похож на логическое сравнение `||`:
@@ -632,8 +642,8 @@ obj?.one?.two?.three ?? 'defaultValue' // 'defaultValue'
 ```javascript
 const value = false;
 
-value ?? 'default'; // false
-value || 'default'; // 'default'
+value ?? "default"; // false
+value || "default"; // 'default'
 ```
 
 ### get (lodash)
@@ -641,21 +651,23 @@ value || 'default'; // 'default'
 Последний пример перегружен символами и выглядит достаточно сложно. Как альтернативу можно использовать функцию `get()` библиотеки Lodash.
 
 ```javascript
-import _ from 'lodash';
+import _ from "lodash";
 
 const obj = {};
 
-const value = _.get(obj, 'one.two.three', 'defaultValue'); // 'defaultValue'
+const value = _.get(obj, "one.two.three", "defaultValue"); // 'defaultValue'
 ```
 
 `get()` особенно удобен в случае динамических ключей. В таком случае вторым аргументом можно передать массив ключей:
 
 ```javascript
-_.get(obj, ['one', 'two', 'three'], 'defaultValue'); // 'defaultValue'
+_.get(obj, ["one", "two", "three"], "defaultValue"); // 'defaultValue'
 ```
 
-------
+---
+
 #### Дополнительные материалы
+
 1. [Функция get из библиотеки Lodash](https://lodash.com/docs/#get)
 
 ## Слияние—JS: Объекты
@@ -666,10 +678,10 @@ _.get(obj, ['one', 'two', 'three'], 'defaultValue'); // 'defaultValue'
 
 ```javascript
 // Такой пользователь есть в системе
-const user = { name: 'Tirion', email: 'support@hexlet.io', age: 44 };
+const user = { name: "Tirion", email: "support@hexlet.io", age: 44 };
 
 // Из формы пришли данные
-const data = { name: 'Tirion 2', age: 33 };
+const data = { name: "Tirion 2", age: 33 };
 
 // В результате должно получиться
 // { name: 'Tirion 2', email: 'support@hexlet.io', age: 33 };
@@ -687,7 +699,7 @@ user.age = data.age;
 Прямой перенос хорошо работает, когда данных мало и их структура не меняется. Если же данных много или в разные моменты времени могут приходить разные данные, то это превращается в кучу одинакового кода:
 
 ```javascript
-if (Object.hasOwn(data, 'name')) {
+if (Object.hasOwn(data, "name")) {
   user.name = data.name;
 }
 
@@ -707,18 +719,18 @@ console.log(user);
 Слияние работает так. Если какое-то свойство было только в первом объекте, то оно остается тем, что и было. Если свойство присутствует во втором (и далее) объекте, то оно записывается в первый независимо от того, было оно там или нет. Поэтому, если свойство присутствовало и в первом объекте и во втором, то оно будет перезаписано значением из второго объекта:
 
 ```javascript
-const obj1 = { a: 'a', b: 'b' };
-const obj2 = { c: 'c', b: 'v' };
+const obj1 = { a: "a", b: "b" };
+const obj2 = { c: "c", b: "v" };
 Object.assign(obj1, obj2);
 console.log(obj1);
 // => { a: 'a', b: 'v', c: 'c' }
 ```
 
-У функции `Object.assign()` есть одно ограничение: она выполняет только *поверхностное* слияние. Вложенные объекты не сравниваются, а просто заменяются:
+У функции `Object.assign()` есть одно ограничение: она выполняет только _поверхностное_ слияние. Вложенные объекты не сравниваются, а просто заменяются:
 
 ```javascript
-const obj1 = { a: { a: 1 } }
-const obj2 = { a: { b: 1 } }
+const obj1 = { a: { a: 1 } };
+const obj2 = { a: { b: 1 } };
 Object.assign(obj1, obj2);
 console.log(obj1);
 // => { a: { b: 1 } }
@@ -726,9 +738,9 @@ console.log(obj1);
 
 Как и любой другой мощный механизм, слияние нуждается в аккуратном использовании. В объектах бывают поля, которые не должны быть перезаписаны при слиянии, например, количество денег на счету у пользователя. Если не контролировать состав данных из второго объекта, то туда могут попасть свойства (случайно или злонамеренно), которые приведут к перезаписыванию важных свойств.
 
-*Если говорить про веб-формы, то технически всегда можно послать больше данных, чем описано в форме.*
+_Если говорить про веб-формы, то технически всегда можно послать больше данных, чем описано в форме._
 
-------
+---
 
 #### Дополнительные материалы
 
@@ -741,7 +753,7 @@ console.log(obj1);
 В JavaScript нет встроенной функции для выполнения клонирования, но его можно эмулировать с помощью `Object.assign()`. Для этого достаточно первым параметром передать пустой объект, а вторым тот, который нужно клонировать:
 
 ```javascript
-const user = { name: 'Tirion', email: 'support@hexlet.io', age: 44 };
+const user = { name: "Tirion", email: "support@hexlet.io", age: 44 };
 
 // данные из user копируются во вновь созданный объект
 const copyOfUser = Object.assign({}, user);
@@ -751,19 +763,19 @@ user === copyOfUser; // false
 
 В результате получаются два разных объекта, имеющих одно и то же содержимое. Так как они разные, то изменения в одном не трогают изменения в другом.
 
-Клонирование также выполняют с помощью функции [clone()](https://lodash.com/docs#clone) библиотеки *lodash*. Несмотря на то, что ее результат идентичен примерам выше, благодаря своему имени она лучше выражает смысл операции.
+Клонирование также выполняют с помощью функции [clone()](https://lodash.com/docs#clone) библиотеки _lodash_. Несмотря на то, что ее результат идентичен примерам выше, благодаря своему имени она лучше выражает смысл операции.
 
 ```javascript
-import _ from 'lodash';
+import _ from "lodash";
 
-const user = { name: 'Tirion', email: 'support@hexlet.io', age: 44 };
+const user = { name: "Tirion", email: "support@hexlet.io", age: 44 };
 const copyOfUser = _.clone(user);
 ```
 
 Клонирование способом, приведенным выше, не затрагивает вложенные объекты. Они оказываются в новом объекте по ссылке из старого.
 
 ```javascript
-const user = { company: { name: 'Hexlet' } };
+const user = { company: { name: "Hexlet" } };
 const copyOfUser = Object.assign({}, user);
 // Это тот же объект
 user.company === copyOfUser.company; // true
@@ -772,14 +784,14 @@ user.company.createdAt = 2012;
 console.log(copyOfUser.company.createdAt); // 2012
 ```
 
-Такое клонирование называется *поверхностным* (shallow). Очень важно запомнить, что именно это имеют ввиду в JavaScript, когда употребляют термин "клонирование". Само по себе это не плохо, поверхностное клонирование подходит для многих ситуаций. Там где его недостаточно, нужно использовать полное клонирование, которое называют глубоким (deep).
+Такое клонирование называется _поверхностным_ (shallow). Очень важно запомнить, что именно это имеют ввиду в JavaScript, когда употребляют термин "клонирование". Само по себе это не плохо, поверхностное клонирование подходит для многих ситуаций. Там где его недостаточно, нужно использовать полное клонирование, которое называют глубоким (deep).
 
-В JavaScript нет встроенного способа клонировать объекты полностью. Поэтому у разработчиков принято использовать готовую функцию [cloneDeep()](https://lodash.com/docs#cloneDeep) из библиотеки *lodash*.
+В JavaScript нет встроенного способа клонировать объекты полностью. Поэтому у разработчиков принято использовать готовую функцию [cloneDeep()](https://lodash.com/docs#cloneDeep) из библиотеки _lodash_.
 
 ```javascript
-import _ from 'lodash';
+import _ from "lodash";
 
-const user = { company: { name: 'Hexlet' } };
+const user = { company: { name: "Hexlet" } };
 const copyOfUser = _.cloneDeep(user);
 
 user.company === copyOfUser.company; // false
@@ -787,14 +799,13 @@ user.company === copyOfUser.company; // false
 
 У полного копирования есть один серьёзный недостаток. Если объект большой и имеет сложную структуру, то полное копирование может сильно влиять на производительность. Это одна из причин, почему такое копирование не выполняется по умолчанию.
 
-
 ## spread и создание новых объектов—JS: Объекты
 
 Поверхностное копирование (clone) и слияние (merge) можно объединить в одну операцию. Это позволяет "обновлять" объекты в функциональном стиле, другими словами мы создаем новые объекты на основе старых, вместо их обновления. Подробнее с такими задачами мы познакомимся ближе к концу профессии, когда пойдет речь про фреймворки. Ниже пример такой операции:
 
 ```javascript
-const user = { name: 'Tirion', email: 'support@hexlet.io', age: 44 };
-const data = { name: 'Tirion 2', age: 33 };
+const user = { name: "Tirion", email: "support@hexlet.io", age: 44 };
+const data = { name: "Tirion 2", age: 33 };
 
 // Новый объект с данными user дополненными данными из data
 const copyOfUser = Object.assign({}, user, data);
@@ -827,7 +838,7 @@ https://repl.it/@hexlet/js-objects-spread-operator-construction
 Всё, что появляется с правой стороны спреда, будет иметь приоритет при слиянии, аналогично тому как работает `Object.assign()`. В свою очередь всё что слева — имеет более низкий приоритет:
 
 ```javascript
-const user = { name: 'Vasya', age: 11 };
+const user = { name: "Vasya", age: 11 };
 
 const newUser = { age: 25, married: true, ...user };
 // Возраст остался тем же
@@ -837,7 +848,7 @@ console.log(newUser); // => { name: 'Vasya', married: true, age: 11 }
 Свойства могут одновременно появляться как слева так и справа от этого оператора:
 
 ```javascript
-const user = { name: 'Vasya', age: 11 };
+const user = { name: "Vasya", age: 11 };
 
 const newUser = { age: 25, ...user, married: true };
 // Возраст остался тем же
@@ -847,8 +858,8 @@ console.log(newUser); // => { name: 'Vasya', married: true, age: 11 }
 Сам спред оператор может использоваться в рамках одного объекта любое количество раз:
 
 ```javascript
-const user = { name: 'Vasya', married: true, age: 25 };
-const user2 = { name: 'Irina', surname: 'Petrova' };
+const user = { name: "Vasya", married: true, age: 25 };
+const user2 = { name: "Irina", surname: "Petrova" };
 
 const mergedObject = { ...user, ...user2 };
 console.log(mergedObject);
@@ -865,8 +876,8 @@ https://repl.it/@hexlet/js-objects-spread-operator-merge-with-same-keys
 Наконец, можно объединить и новые свойства и несколько спредов вместе:
 
 ```javascript
-const user = { name: 'Irina', age: 25, married: false };
-const user2 = { name: 'Petya', surname: 'Ivanov' };
+const user = { name: "Irina", age: 25, married: false };
+const user2 = { name: "Petya", surname: "Ivanov" };
 
 const newUser = { ...user, married: true, ...user2 };
 console.log(newUser);
@@ -874,8 +885,6 @@ console.log(newUser);
 ```
 
 https://repl.it/@hexlet/js-objects-spread-operator-flexible
-
-
 
 ## Деструктуризация—JS: Объекты
 
@@ -899,21 +908,21 @@ console.log(greeting);
 ```javascript
 const response = {
   data: {
-    type: 'photos',
-    id: '550e8400-e29b-41d4-a716-446655440000',
+    type: "photos",
+    id: "550e8400-e29b-41d4-a716-446655440000",
     attributes: {
-      title: 'Ember Hamster',
-      src: 'http://example.com/images/productivity.png'
+      title: "Ember Hamster",
+      src: "http://example.com/images/productivity.png",
     },
     relationships: {
       author: {
         links: {
-          related: 'http://example.com/articles/1/author'
+          related: "http://example.com/articles/1/author",
         },
       },
     },
     links: {
-      self: 'http://example.com/photos/550e8400-e29b-41d4-a716-446655440000'
+      self: "http://example.com/photos/550e8400-e29b-41d4-a716-446655440000",
     },
   },
 };
@@ -932,7 +941,7 @@ const author = response.data.relationships.author;
 Деструктуризация (destructuring) — специальный синтаксис, позволяющий извлекать части из составных данных. Это удобный способ раскладывать объекты на части. Он позволяет сократить код и сделать его более понятным.
 
 ```javascript
-const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true };
+const person = { firstName: "Rasmus", lastName: "Lerdorf", manager: true };
 
 const { firstName, manager } = person;
 
@@ -947,7 +956,7 @@ https://repl.it/@hexlet/js-objects-destructuring-object-destructuring
 При деструктуризации можно переименовывать имена. Такое бывает нужно, если подобная константа уже определена выше.
 
 ```
-const manager = /* ... */; // имя занято 
+const manager = /* ... */; // имя занято
 
 const person = { firstName: 'Rasmus', lastName: 'Lerdorf', manager: true };
 
@@ -959,7 +968,7 @@ console.log(isManager); // => true
 В случае отсутствия свойств в объекте, деструктуризация позволяет задавать значения по умолчанию для таких свойств:
 
 ```javascript
-const person = { firstName: 'Rasmus', lastName: 'Lerdorf' };
+const person = { firstName: "Rasmus", lastName: "Lerdorf" };
 
 console.log(person.manager); // undefined
 const { manager = false } = person;
@@ -975,13 +984,17 @@ https://repl.it/@hexlet/js-objects-destructuring-default-value
 // const links = response.data.links;
 // const author = response.data.relationships.author;
 
-const { links, attributes: user, relationships: { author } } = response.data;
+const {
+  links,
+  attributes: user,
+  relationships: { author },
+} = response.data;
 ```
 
 У spread оператора есть похожий, но выполняющий обратное действие оператор, называемый rest. С его помощью во время деструктуризации можно собрать все "оставшиеся" свойства в один объект:
 
 ```javascript
-const user = { name: 'Tirion', email: 'support@hexlet.io', age: 44 };
+const user = { name: "Tirion", email: "support@hexlet.io", age: 44 };
 
 const { name, ...rest } = user;
 
@@ -991,12 +1004,7 @@ console.log(rest);
 
 Деструктуризация хоть и не является обязательным элементом и она не влияет на архитектуру программ, но ее использование делает код чище и понятнее (если не увлекаться глубиной).
 
-
-
-
-
 ## Хеш-таблицы—JS: Объекты
-
 
 **Ассоциативный** массив — абстрактный тип данных, с помощью которого хранятся пары ключ-значение. У него есть и другие названия: "словарь", "мап" (от слова map). В разных языках ему соответствуют разные типы данных. В JavaScript — это Object, в других языках:
 
@@ -1009,13 +1017,13 @@ console.log(rest);
 
 Ассоциативный массив, в отличие от обычного массива (называемого индексированным, так как значения в нем расположены по индексам), нельзя положить в память "как есть". У него нет индексов, которые бы могли определить порядок и простой способ добраться до значений. Для реализации ассоциативных массивов часто используют специальную структуру данных — хеш-таблицу. Она позволяет организовать данные ассоциативного массива удобным для хранения способом. Для этого хеш-таблица использует две вещи: индексированный массив и функцию для хеширования ключей. Обратите внимание, что хеш-таблица это не просто способ размещать данные в памяти, она включает в себя логику.
 
-*Ниже пойдет речь про то, как ассоциативные массивы бывают устроены внутри. Эта информация крайне важна для разработчиков, которые хотят по настоящему разбираться в том, что они делают. Она снимает "магичность" с происходящего внутри языка и дает понимание цены, которую приходится платить за удобство использования объектов.*
+_Ниже пойдет речь про то, как ассоциативные массивы бывают устроены внутри. Эта информация крайне важна для разработчиков, которые хотят по настоящему разбираться в том, что они делают. Она снимает "магичность" с происходящего внутри языка и дает понимание цены, которую приходится платить за удобство использования объектов._
 
 Итак, что примерно происходит, когда мы выполняем код:
 
 ```javascript
 const data = {};
-data['key'] = 'value';
+data["key"] = "value";
 ```
 
 ## Хеширование
@@ -1027,16 +1035,16 @@ data['key'] = 'value';
 ```javascript
 // В JavaScript нет встроенной поддержки алгоритма хеширования crc32 (удобен для наглядности)
 // Поэтому используется сторонняя библиотека
-import crc32 from 'crc-32';
+import crc32 from "crc-32";
 
-const data = 'Hello, world!'; // Любые данные, которые мы хотим хешировать
+const data = "Hello, world!"; // Любые данные, которые мы хотим хешировать
 const hash = crc32.str(data);
 
 // Хеш всегда одинаковый для одних и тех же данных!
 console.log(hash); // => -337197338
 ```
 
-С хешированием мы встречаемся в разработке часто. Например, идентификатор коммита в git *0481e0692e2501192d67d7da506c6e70ba41e913* не что иное, как хеш, полученный в результате хеширования данных коммита.
+С хешированием мы встречаемся в разработке часто. Например, идентификатор коммита в git _0481e0692e2501192d67d7da506c6e70ba41e913_ не что иное, как хеш, полученный в результате хеширования данных коммита.
 
 После того, как хеш получен, его можно преобразовать в индекс массива, например, через получение остатка от деления:
 
@@ -1055,7 +1063,7 @@ console.log(index); // => 338
 
 ```javascript
 const data = {};
-data['key'] = 'value';
+data["key"] = "value";
 ```
 
 Такая простая, на первый взгляд, строчка, запускает целый процесс. Ниже его грубое описание, без деталей и с упрощениями:
@@ -1068,12 +1076,12 @@ const internal = [];
 // Во время присвоения значения `data['key'] = 'value'`, интерпретатор выполняет несколько действий:
 
 // 2. Хеширует ключ. Результатом хеширования становится число.
-const hash = crc32.str('key');
+const hash = crc32.str("key");
 // 3. Число, полученное на предыдущем шаге, преобразуется в индекс массива.
 const index = Math.abs(hash) % 1000;
 // В значение внутреннего индексированного массива, по найденному индексу, записывается ещё один массив,
 // первым элементом которого становится ключ `'key'`, а вторым значение `'value'`.
-internal[index] = ['key', 'value'];
+internal[index] = ["key", "value"];
 ```
 
 Почему такая странная структура для хранения? Зачем там нужен ключ? Ответ на этот вопрос будет ниже, там где мы поговорим про коллизии.
@@ -1082,12 +1090,12 @@ internal[index] = ['key', 'value'];
 
 ```javascript
 const data = {};
-data['key'] = 'value';
-console.log(data['key']); // => "value"
+data["key"] = "value";
+console.log(data["key"]); // => "value"
 // Для простоты показано на JavaScript, хотя в реальности всё это происходит на более низком уровне
 
 // 1. Хешируется ключ. Результатом хеширования становится число.
-const hash = crc32.str('key');
+const hash = crc32.str("key");
 // 2. Число, полученное на предыдущем шаге преобразуется в индекс массива.
 const index = Math.abs(hash % 1000);
 
@@ -1105,8 +1113,8 @@ return internal[index]; // ['key', 'value']
 // Пример коллизии
 
 // Две разных строчки возвращают одинаковый хеш!
-crc32.str('aaaaa0.462031558722291'); // 1938556049
-crc32.str('aaaaa0.0585754039730588'); // 1938556049
+crc32.str("aaaaa0.462031558722291"); // 1938556049
+crc32.str("aaaaa0.0585754039730588"); // 1938556049
 ```
 
 Коллизии не так редки, как может показаться. Убедиться в этом можно, изучив [парадокс дней рождений](https://ru.wikipedia.org/wiki/Парадокс_дней_рождения).
