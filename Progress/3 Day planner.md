@@ -69,3 +69,42 @@ function SortArray(x, y){
     return x.LastName.localeCompare(y.LastName);
 }
 ```
+
+**Объекты сравниваются через JSON**
+```javascript
+// @ts-check
+/* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
+// BEGIN (write your solution here)
+export default (arr, param) =>
+  arr.find(
+    (obj) => JSON.stringify({ ...obj, ...param }) === JSON.stringify(obj)
+  ) ?? null;
+// END
+```
+
+**Использование флага 
+```javascript
+// @ts-check
+/* eslint no-restricted-syntax: ["off", "ForOfStatement"] */
+// BEGIN (write your solution here)
+export default (arr, param) => {
+  const entries = Object.entries(param);
+  for (const obj of arr) {
+    let find = true;
+    for (const [k, v] of entries) {
+      if (obj[k] !== v) {
+        find = false;
+      }
+    }
+    if (find) {
+      return obj;
+    }
+  }
+  return null;
+};
+// END
+```
+
+Разобрать решение учителя с объектами 
+https://ru.hexlet.io/code_reviews/508995
+_Инкремент и декремент — единственные базовые арифметические операции в JS, которые обладают побочными эффектами (изменяют само значение в переменной)._
