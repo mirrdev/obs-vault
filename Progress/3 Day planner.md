@@ -52,12 +52,6 @@ export const flatten = (arr) =>
 // END
 ```
 Реализуйте и экспортируйте функцию `getMax()`, которая ищет в массиве максимальное значение и возвращает его.
-```javascript
-// BEGIN (write your solution here)
-export const flatten = (arr) =>
-  arr.reduce((acc, v) => (Array.isArray(v) ? [...acc, ...v] : [...acc, v]), []);
-// END
-```
 
 ## objects.js
 
@@ -68,3 +62,10 @@ const cloneDeep = (obj) => Object.entries(obj).reduce((acc, [k, v]) => ({ ...acc
 export { cloneDeep as default };
 ```
 **Внимание стандартная функции Object.is() выдает ошибку на типе null**
+
+Узнал о функции сортировки по алфовиту с учетом локали 
+```javascript
+function SortArray(x, y){
+    return x.LastName.localeCompare(y.LastName);
+}
+```
