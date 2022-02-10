@@ -142,7 +142,23 @@ console.log(newNumbers); // => [25, 4, 9]
 Подчеркну, что возвращать аккумулятор надо всегда, даже если он не изменился.
 **Андрей Петраков**, здравствуйте! Вы можете обернуть одну функцию в другую и передать в неё все необходимые параметры, включая те значения, которые определены в окружении:
 
-```
+```javascript
 Code (possible spoiler)students.reduce((prev, student) => fun(prev, student, mark), {});
+
+// @ts-check
+
+  
+
+// BEGIN (write your solution here)
+
+const cb = (data, obj, param) => {
+const groupName = obj[param];
+const group = data[groupName] ?? [];
+return { ...data, [groupName]: [...group, obj] };
+};
+
+const groupBy = (users, key) => users.reduce((acc, user) => cb(acc, user, key), {});
+// END
+export default groupBy;
 ```
 
