@@ -24,3 +24,47 @@ NODE_ENV=production npm install
 ```
 npm ci --production
 ```
+
+### 10.02.22
+Чтобы в функуциях высшего порядка (forEach, map, reduce) досрочно выйти из цикла, по аналогии c 
+```javascript
+for (const key of keys) {
+	if (key === null) {
+		return false
+	}
+}
+```
+Можно использовать every some 
+```javascript
+const mapDNA = new Map([['G', 'C'], ['C', 'G'], ['T', 'A'], ['A', 'U']]);
+const dnaToRna = (str) => {
+const res = [];
+return [...str].every((v) => mapDNA.has(v) && res.push(mapDNA.get(v))) ? res.join('') : null;
+};
+```
+Они возвращают true или false и не доходят до конца
+
+Реализуйте и экспортируйте функцию `flatten()`. Эта функция принимает на вход массив и выпрямляет его: если элементами массива являются массивы, то _flatten_ сводит всё к одному массиву, раскрывая один уровень вложенности.
+```javascript
+// BEGIN (write your solution here)
+export const flatten = (arr) =>
+  arr.reduce((acc, v) => (Array.isArray(v) ? [...acc, ...v] : [...acc, v]), []);
+// END
+```
+Реализуйте и экспортируйте функцию `getMax()`, которая ищет в массиве максимальное значение и возвращает его.
+```javascript
+// BEGIN (write your solution here)
+export const flatten = (arr) =>
+  arr.reduce((acc, v) => (Array.isArray(v) ? [...acc, ...v] : [...acc, v]), []);
+// END
+```
+
+## objects.js
+
+Реализуйте и экспортируйте по умолчанию функцию, которая выполняет глубокое копирование объектов.
+```javascript
+const cloneDeep = (obj) => Object.entries(obj).reduce((acc, [k, v]) => ({ ...acc, [k]: v.constructor === Object ? cloneDeep(v) : v }), {});
+// END
+export { cloneDeep as default };
+```
+**Внимание стандартная функции Object.is() выдает ошибку на типе null**

@@ -7,8 +7,12 @@
         "id": "41cc134379ef4a57",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Progress/3 Day planner.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Progress/3 Day planner.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,6 +89,7 @@
   },
   "active": "41cc134379ef4a57",
   "lastOpenFiles": [
+    "Progress/3 Day planner.md",
     "JS Деревья.md",
     "Hexlet/JS/Конспект/JS Абстракция с помощью данных.md",
     "Hexlet/JS/Конспект/JS Автоматическое тестирование.md",
@@ -92,7 +98,6 @@
     "Dev tools/Linux.md",
     "git/Добавление SSH ключа.md",
     "git/Именование комитов.md",
-    "Dev tools/visual code plugins.md",
-    "Progress/3 Day planner.md"
+    "Dev tools/visual code plugins.md"
   ]
 }
