@@ -209,4 +209,22 @@ export default groupBy;
 предметную область
 
 ### 15.02.22
+Какой подход был бы подходящим для фрагментации (разделения) массива на множество меньших массивов, скажем, максимум из 10 элементов?
+```javascript
+const chunk1 = (data, ch) =>
+	data.reduce(
+		(acc, _, i) => (i % ch ? acc : [...acc, data.slice(i, i + ch)]),
+	[]
+);
+```
+
+```javascript
+const chunk = (data, ch) => {
+const result = [];
+	for (let i = 0; i < data.length; i += ch) {
+		result.push(data.slice(i, i + ch));
+	}
+return result;
+};
+```
 
