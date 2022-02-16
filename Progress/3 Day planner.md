@@ -268,3 +268,14 @@ const summaryRanges = (arr) => {
 	return result;
 };
 ```
+Пересечение интервалов лучше всего решать через Set
+```javascript
+const sumIntervals = (internals) => {
+  const result = new Set();
+  internals.forEach(([start, end]) => {
+    for (let i = start; i < end; i += 1) {
+	  result.add(i);
+	}
+  });
+  return result.size;
+};```
