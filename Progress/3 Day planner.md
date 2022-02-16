@@ -228,3 +228,46 @@ return result;
 };
 ```
 
+
+## solution.js
+
+Реализуйте и экспортируйте по умолчанию функцию, которая находит в массиве непрерывные возрастающие последовательности чисел и возвращает массив с их перечислением.
+
+### Примеры
+
+```
+summaryRanges([]);
+// []
+
+summaryRanges([1]);
+// []
+
+summaryRanges([1, 2, 3]);
+// ['1->3']
+
+summaryRanges([0, 1, 2, 4, 5, 7]);
+// ['0->2', '4->5']
+
+summaryRanges([110, 111, 112, 111, -5, -4, -2, -3, -4, -5]);
+// ['110->112', '-5->-4']
+```
+```javascript
+const writeSegment = (segment) => `${segment.at(0)}->${segment.at(-1)}`;
+
+const summaryRanges = (arr) => {
+	const result = [];
+	let segment = [];
+	for (let i = 0; i < arr.length; i += 1) {
+		const current = arr[i];
+		const next = arr[i + 1];
+		segment.push(arr[i]);
+		if (next !== current + 1) {
+			if (segment.length > 1) {
+			result.push(writeSegment(segment));
+			}
+		segment = [];
+		}
+	}
+	return result;
+};
+```
