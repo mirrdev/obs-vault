@@ -360,3 +360,26 @@ company1.getName(); // "Hexlet"
 
 Функции, записанные внутрь свойств объектов, называют методами:
 
+**Реализация функции bind**
+```javascript
+// @ts-check
+
+// BEGIN (write your solution here)
+// Вариант 1
+export default (contex, fn, ...bindArgs) => {
+  const res = { ...contex };
+  res.fn = fn;
+  return (...args) => res.fn(...args, ...bindArgs);
+};
+// Вариант 2
+const bind = (context, fn, ...boundArgs) => (...args) =>
+  fn.apply(context, [...boundArgs, ...args]);
+
+// END
+```
+
+
+Стрелочные функции отличаются от обычных не только способом записи. Главное их отличие проявляется в том, как они работают с контекстом. Вкратце: контекст обычных функций зависит от места вызова, а контекст стрелочных функций — от того места, где они были определены.
+
+
+
