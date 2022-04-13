@@ -477,4 +477,463 @@ class Money {
 Абстракция подразумевает наличие некоторого понятия (типа), значения которого обладают _временем жизни_. Это значит, что она создается и затем многократно и по-разному используется. Например, невозможно представить работу с пользователем в виде одной функции.
 Существует формальное правило, позволяющее это определить. Если создание объекта и вызов метода можно заменить на обычную функцию, то ни о какой абстракции речи не идёт, и правильный подход, в данной ситуации, сводится к переносу данных из конструктора в сам метод.
 
+Абстракция данных подразумевает то, что объект представляет из себя не способ выполнить операцию, а конкретный набор данных, который, как правило, может меняться с течением времени. Изменение такого объекта должно отражаться на всех остальных.
+
+
+Привет! Интересный вопрос. Мое мнение - причина в том, что Object.assign мутирует исходный целевой объект, а слияния через деструктуризацию - возвращает новый объект. И получается, что используя Object.assign мы мутируем static свойства инстанса Truncatter. Изменения сохраняются и влияют на следующий тест.
+
+```
+Code (possible spoiler)const obj1 = {a: 1, b: 2};const obj2 = {a: 'changed', b: 2, c: 0};Object.assign(obj1, obj2);console.log(obj1); // { a: 'changed', b: 2, c: 0 };
+```
+
+Наверное, Obect.assign - это что-то устаревшее)) с сюрпризами
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[1](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Мария Некрасова](https://ru.hexlet.io/u/mary_an)ТС
+
+[02 июня 2021](https://ru.hexlet.io/topics/55069)
+
+Добрый день! подскажите пожалуйста, почему не все тесты проходят [https://ru.hexlet.io/code_reviews/412237](https://ru.hexlet.io/code_reviews/412237)
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Скрыть комментарии](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Максим Литвинов](https://ru.hexlet.io/u/malcom)Поддержка
+
+[03 июня 2021](https://ru.hexlet.io/topics/55069#116894)
+
+Добрый день, Мария! Опции, переданные в метод, должны дополнять, но не полностью заменять дефолтные опции и опции, переданные в конструктор. Посмотрите пример работы в задании:
+
+```
+Code (possible spoiler)const truncater = new Truncater({ 'length': 6 });truncater.truncate('one two', { 'separator': '.' }); // 'one tw.'
+```
+
+Опции, переданные в метод `truncate` дополнили опции, переданные в конструктор при создании объекта
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[1](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Мария Некрасова](https://ru.hexlet.io/u/mary_an)ТС
+
+[03 июня 2021](https://ru.hexlet.io/topics/55069#116932)
+
+спасибо
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[alex_de_suzo](https://ru.hexlet.io/u/alex_de_suzo)ТС
+
+[11 мая 2021](https://ru.hexlet.io/topics/54592)
+
+[https://ru.hexlet.io/code_reviews/405398](https://ru.hexlet.io/code_reviews/405398) День добрый,подскажите пс-та почему в конструкторе не определяются никакие опции?
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Максим Литвинов](https://ru.hexlet.io/u/malcom)Поддержка
+
+[12 мая 2021](https://ru.hexlet.io/topics/54592#116003)
+
+Добрый день! Судя по выводу тестов, метод `truncate()` не является функцией:
+
+```
+Code (possible spoiler)
+```
+
+Уточните в задании, как должен называться метод:
+
+> Реализуйте в классе Truncater конструктор и метод truncate()
+
+Посмотрите в [уроке про статические свойства](https://ru.hexlet.io/courses/js-introduction-to-oop/lessons/static/theory_unit), как обратиться к статическому свойству изнутри объекта.
+
+Также обратите внимание на пример вызова метода:
+
+```
+Code (possible spoiler)
+```
+
+Метод вызывается у созданного объекта, а значит он не статический.
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Nick Petrenko](https://ru.hexlet.io/u/extendsnull)ТС
+
+[19 апреля 2021](https://ru.hexlet.io/topics/54096)
+
+Линтер ругается на файл с тестами:
+
+```
+Code (possible spoiler)
+```
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Максим Литвинов](https://ru.hexlet.io/u/malcom)Поддержка
+
+[19 апреля 2021](https://ru.hexlet.io/topics/54096#115021)
+
+Спасибо, поправил! Нажмите Сброс, чтобы получить новую версию упражнения
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Тимофей Ч.](https://ru.hexlet.io/u/tmm)ТС
+
+[11 апреля 2021](https://ru.hexlet.io/topics/53895)
+
+Совсем не понял этот абзац. Думал минут 15)
+
+> Главный недостаток связан с невозможностью подмены реализации (тот самый полиморфизм, о котором мы будем говорить в будущем), так как объект создаётся не на этапе конфигурирования системы, а в том месте, где происходит вызов. Это, в свою очередь, ведёт к тому, что придётся дублировать общие опции, а тестирование станет затруднительным (если не невозможным).
+
+Что означает "подмена реализации" и "этап конфигурирования системы"? И почему тестирование такого варианта затруднительно?
+
+В чем всё-таки преимущество способа использовать всегда один и тот же объект, но с доп. опциями? Ведь по сути это ничем не отличается от первого варианта. Ну, кроме излишнего дублирования объектов и опций. Или в этом и есть недостаток?
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[1](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (3)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[P y t h o n](https://ru.hexlet.io/u/python)Cтудент
+
+[21 сентября 2021](https://ru.hexlet.io/topics/53895#122044)
+
+**Максим Литвинов**, Лучше чем в теории объяснил.
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Владислав](https://ru.hexlet.io/u/user-b32a220ac3974acd)ТС
+
+[09 марта 2021](https://ru.hexlet.io/topics/52870)
+
+Здравствуйте! Похоже, у меня проблема с тем, что я неправильно меняю дефолтные options. [https://ru.hexlet.io/code_reviews/383125](https://ru.hexlet.io/code_reviews/383125) Подскажите, как правильно это делать?
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (6)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Максим Литвинов](https://ru.hexlet.io/u/malcom)Поддержка
+
+[10 марта 2021](https://ru.hexlet.io/topics/52870#112751)
+
+Владислав, я так понимаю, вам удалось справиться с этим заданием? Если вам помогли ответы Андрея, можете отметить их как решение. Так вы сможете поблагодарить его за помощь и поможете другим студентам найти ответ на аналогичный вопрос
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Виталина Данилова](https://ru.hexlet.io/u/vitalinadanilova)ТС
+
+[26 февраля 2021](https://ru.hexlet.io/topics/52575)
+
+Добрый день! Не могу пройти один тест. При отсутствии сепаратора я присваиваю ему дефолтное значение и сливаю с другими параметрами. Получается: `{ separator: '...', length: 7 }`. И это логично, иначе зачем нам вообще этот класс с его опциями по умолчанию?? Однако тесты требуют, чтобы вернулась исходная строка. Может быть, я выбрала неправильный способ решения? [Ревью.](https://ru.hexlet.io/code_reviews/379165)
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (3)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Александр Мандриков](https://ru.hexlet.io/u/nunsez)Cтудент
+
+[05 мая 2021](https://ru.hexlet.io/topics/52575#115762)
+
+**Антон Егоров**, исходная строка - это то, что мы передаём изначально. Если эта строка короче, чем наш порог `length`, то логично, что мы не будем ничего отсекать.
+
+Конкретные числовые параметры длины мы уже задаем вторым аргументом метода `truncate()`. При тестировании этого упражнения используются разные значения. Чтобы лучше понять, как должен работать данный метод, вы можете посмотреть тесты.
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Алексей Шлапаков](https://ru.hexlet.io/u/laqi)ТС
+
+[12 января 2021](https://ru.hexlet.io/topics/51141)
+
+День добрый. Не могу врубиться почему при обращении к defaultOptions, мы делаем это через constructor?
+
+```
+Code (possible spoiler)
+```
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[1](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (1)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Сергей Мелодин](https://ru.hexlet.io/u/melodyn)Поддержка
+
+[13 января 2021](https://ru.hexlet.io/topics/51141#109391)
+
+**Алексей Шлапаков**, приветствую.
+
+Потому что идёт обращение к функции-конструктору. Это рассматривалось немного раньше в уроке по статическим свойствам: [https://ru.hexlet.io/courses/js-introduction-to-oop/lessons/static/theory_unit](https://ru.hexlet.io/courses/js-introduction-to-oop/lessons/static/theory_unit)
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[1](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Vlad Sergy](https://ru.hexlet.io/u/nfirea)ТС
+
+[10 января 2021](https://ru.hexlet.io/topics/51098)
+
+Доброго времени суток Ув. Менторы.
+
+Запуская код локально, линтер ругается на синтаксис.
+
+```
+Code (possible spoiler)
+```
+
+Значит ли это, что для это фичи нужен babel-eslint ? Или есть другие опции это обойти, заранее Спасибо.
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (3)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Vlad Sergy](https://ru.hexlet.io/u/nfirea)ТС
+
+[25 января 2021](https://ru.hexlet.io/topics/51098#110168)
+
+И вправду дело было в конфиге, спасибо за помощь.
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Влад Мельник](https://ru.hexlet.io/u/vla2d)ТС
+
+[28 декабря 2020](https://ru.hexlet.io/topics/50754)
+
+Здравствуйте! На данный момент зашел в небольшой тупик, вот моя [попытка решения](https://ru.hexlet.io/code_reviews/356677), но все же я не понимаю, почему на некоторых тестах возникают ошибки. В каком моменте я что то упустил?
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (1)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Владимир Лоскутов](https://ru.hexlet.io/u/inline)Cтудент
+
+[25 января 2021](https://ru.hexlet.io/topics/50754#110203)
+
+**Влад Мельник**, если вдруг еще актуально, то значения дефолтных опций в статическом свойстве у вас отличается от исходных (у вас length: 2, исходное значение должно быть 200)
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Андрей Б](https://ru.hexlet.io/u/bleav)ТС
+
+[21 декабря 2020](https://ru.hexlet.io/topics/50593)
+
+Здравствуйте! Помогите пожалуйста продвинуться, [вот недорешение](https://ru.hexlet.io/code_reviews/354706), я так понял, что опции предаются при вызове нового класса, при вызове метода `truncate`, а еще по умолчанию содержатся в статическом свойстве класса. Как заставить метод извлекать опции из переданных параметров а не из вышеобъявленных свойств?
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (1)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Андрей Б](https://ru.hexlet.io/u/bleav)ТС
+
+[22 декабря 2020](https://ru.hexlet.io/topics/50593#108324)
+
+В общем да. Но не додумался ввести в методе значение по умолчанию для опций, поэтому ввел мутируемый объект в тело метода.
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Denis](https://ru.hexlet.io/u/draught)ТС
+
+[17 декабря 2020](https://ru.hexlet.io/topics/50488)
+
+Добрый день!
+
+Перед выполнением упражнения загуглил, что доступ к статическим свойствам осуществляется через название самого класса - сработало. Увидел решение учителя. Вопрос: доступы абсолютно идентичны и всего лишь по-разному пишутся или отличия внутри тоже есть?
+
+[https://ru.hexlet.io/code_reviews/353431](https://ru.hexlet.io/code_reviews/353431)
+
+Спасибо!
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Сергей Мелодин](https://ru.hexlet.io/u/melodyn)Поддержка
+
+[18 декабря 2020](https://ru.hexlet.io/topics/50488#108129)
+
+**Denis**, приветствую.
+
+Класс может не иметь имени (`export default class {`), в таком случае обращение по имени внутри него не сработает, поэтому вариант через this предпочтительнее.
+
+Отмечено как решение
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Anton Minin](https://ru.hexlet.io/u/aminin)ТС
+
+[09 декабря 2020](https://ru.hexlet.io/topics/50277)
+
+Добрый день!
+
+Слово `троеточие` в упражнении режет глаз.
+
+> функция truncate(), которая обрезает слишком длинный текст и ставит в конце троеточие:
+
+По смыслу, там должно быть **многоточие** (ellipsis).
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (5)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Anton Minin](https://ru.hexlet.io/u/aminin)ТС
+
+[10 декабря 2020](https://ru.hexlet.io/topics/50277#107755)
+
+**Сергей Мелодин**, сорян за холивар ;)
+
+Не сообразил ткнуться в задание, прежде чем жать `Ctrl + Enter`.
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Курс «[JS: Объектно-ориентированный дизайн](https://ru.hexlet.io/courses/js-object-oriented-design)»  
+↳ Урок «[Изменяемая конфигурация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)»
+
+[Ekaterina Fedoseeva](https://ru.hexlet.io/u/katherina_fed)ТС
+
+[03 декабря 2020](https://ru.hexlet.io/topics/50064)
+
+Добрый день! Взываю о помощи, запуталась в трех соснах, а именно в условиях метода. Вот [ревью](https://ru.hexlet.io/code_reviews/348137).
+
+Я понимаю, что застряла в элементарном решении, но у меня просто ступор(
+
+Решено
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+[Показать ещё комментарии (2)](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[Сергей Мелодин](https://ru.hexlet.io/u/melodyn)Поддержка
+
+[04 декабря 2020](https://ru.hexlet.io/topics/50064#107328)
+
+**katherina_fedoseeva20**, отлично!
+
+[Ответить](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#)
+
+[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit# "Нравится")
+
+Проверить[](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/next?unit=exercise "Далее")
+
+[](https://ru.hexlet.io/my "Мой Хекслет")[Навигация](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#coursenav-modal)
+
+пройдено 9 уроков из 9
+
+-   [Шаг:упражнение](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#lesson)
+-   [Обсуждение](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit#community)
+-   [Теория](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/theory_unit)
+
+[Задание](https://ru.hexlet.io/courses/js-object-oriented-design/lessons/configuration-setters/exercise_unit#readme-modal)[Сброс](https://ru.hexlet.io/instances/3156736)Подсказка
+
+Редактор
+
+
 
