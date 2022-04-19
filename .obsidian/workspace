@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "41cc134379ef4a57",
+        "id": "19013be5e91d7ebc",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "41cc134379ef4a57",
+  "active": "19013be5e91d7ebc",
   "lastOpenFiles": [
     "Progress/3 Day planner.md",
+    "Progress/1 Plan training.md",
+    "Progress/4 Diary Monday.md",
+    "public/Pasted image 20220419125923.png",
     "Progress/2 Compleded training.md",
     "Untitled Kanban.md",
     "Hexlet Деревья.md",
-    "Progress/1 Plan training.md",
-    "Progress/4 Diary Monday.md",
     "Progress/5 After training.md",
     "Hexlet/JS/Конспект/JS Деревья.md",
-    "Hexlet/JS/Конспект/JS Массивы.md",
-    "JS Деревья.md"
+    "Hexlet/JS/Конспект/JS Массивы.md"
   ]
 }
