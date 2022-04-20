@@ -638,10 +638,9 @@ domain=.hexlet.io; path=/;
 Можно заметить, что в нашем примере установлен дополнительный параметр *HttpOnly*. HttpOnly куки передаются с AJAX-запросами, но их нельзя получить через JavaScript на странице сайта. Это дополнительный уровень безопасности от XSS атак.
 Все куки отправляются одним заголовком в формате *key=value; key=value* без дополнительных параметров.
 
-
 ### 20.04.22
 
-#### <span style="color:red">План (внимание ответственность)</span>
+#### <span style="color:#f44336">План (внимание ответственность)</span>
 
 - [ ] СИКП на JS
 - [ ] Udemi Начать курс Петреченко
@@ -656,17 +655,19 @@ domain=.hexlet.io; path=/;
 ---
 
 #### Важное
+
 **Цикломатическая сложность** - количество линейно-независимых маршрутов через програмный код.
 Если нет ветвлений или циклов сложность равно 1;
 
 ![[public/Pasted image 20220420124921.png]]
-```javascript 
+
+```javascript
 // Complexity: 1
 const sum = (a, b) => a + b;
 sum(1, 3); // 4
 
 // Complexity: 2
-const abs = n => (n >= 0 ? n : -n);
+const abs = (n) => (n >= 0 ? n : -n);
 
 abs(10); // 10
 abs(-3); // 3
@@ -678,16 +679,16 @@ abs(-3); // 3
 // Вмечто
 const f = (age, sex) => {
   if (age >= 18) {
-    if (sex === 'male') {
-      return 'yes';
+    if (sex === "male") {
+      return "yes";
     }
-    if (sex === 'female') {
-      return 'no';
+    if (sex === "female") {
+      return "no";
     }
   }
 
   return null;
-}
+};
 
 // Лучше
 
@@ -696,15 +697,12 @@ const f = (age, sex) => {
     return null;
   }
 
-  if (sex === 'male') {
-    return 'yes';
+  if (sex === "male") {
+    return "yes";
   }
 
-  if (sex === 'female') {
-    return 'no';
+  if (sex === "female") {
+    return "no";
   }
-}
-
+};
 ```
-
-
