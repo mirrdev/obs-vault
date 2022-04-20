@@ -564,3 +564,22 @@ _keep-alive_ - означает, что соединение TCP, по кото
 Content-Length: 218
 _Content-Type: application/octet-stream_.
 ```
+```http
+POST /session/new HTTP/1.1
+Host: hexlet.local
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 30
+Connection: close
+
+username=admin&password=secret
+```
+Transfer-Encoding:chunked *если мы не знаем размер*
+
+
+Помимо того, что данные на сервер можно передавать через _body_, которое используется при _POST_ запросах и отправке форм, мы также можем передать так называемую строку запроса _query string_.
+_query string_. Это параметры _ключ=значение_ которые располагаются в _request line_ после указания глагола _POST_ или _GET_.
+_query string_ или передать параметры в теле запроса
+```http
+Authorization: Basic aHR0cHdhdGNoDmY=
+```
+
