@@ -756,4 +756,18 @@ const f = (coll) => {
 
 **Замыкание** — это функция, «запомнившая» часть окружения, где она была задана.
 **Частичное применение** - техника основанная из возможности возвращать функцию из других функций.
+**или**
+Процесс фиксации части аргументов функции, который создает другую функцию с меньшим количеством аргументов
+
 Правильнее говорить что функция применена к данным аргументам.
+
+```javascript
+const getProgrammersSalaryByCountry = partialApply(getAverageSalary, 'programmer');
+
+const salary1 = getProgrammersSalaryByCountry('spain');
+const salary2 = getProgrammersSalaryByCountry('russia');
+const salary3 = getProgrammersSalaryByCountry('usa');
+
+const partialApply = (fn, arg1) => (arg2) => fn(arg1, arg2);
+```
+
