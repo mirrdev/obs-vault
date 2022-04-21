@@ -1,0 +1,29 @@
+{
+  "settings": {
+    "migrated": true,
+    "iconPacksPath": "plugins/obsidian-icon-folder/icons",
+    "fontSize": 16,
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasDatabase",
+      "RiBook3Line",
+      "RiComputerLine",
+      "RiGitBranchLine",
+      "RiSettings5Line"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraPadding": {
+      "top": 2,
+      "right": 2,
+      "bottom": 2,
+      "left": 2
+    }
+  },
+  "Hexlet": "RiComputerLine",
+  "Dev tools": "RiSettings5Line",
+  "books": "RiBook3Line",
+  "Hexlet/JS": "RiReactjsFill",
+  "public": "FasDatabase",
+  "Dev tools/git": "RiGitBranchLine"
+}

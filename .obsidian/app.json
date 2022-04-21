@@ -3,5 +3,5 @@
   "livePreview": true,
   "spellcheck": false,
   "promptDelete": false,
-  "attachmentFolderPath": "resouses"
+  "attachmentFolderPath": "public"
 }

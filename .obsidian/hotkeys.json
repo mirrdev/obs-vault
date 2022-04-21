@@ -16,5 +16,13 @@
       ],
       "key": "-"
     }
+  ],
+  "obsidian-languagetool-plugin:ltcheck-text": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "1"
+    }
   ]
 }
