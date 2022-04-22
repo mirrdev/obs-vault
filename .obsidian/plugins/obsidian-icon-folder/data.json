@@ -5,11 +5,11 @@
     "fontSize": 16,
     "iconColor": null,
     "recentlyUsedIcons": [
-      "FasDatabase",
-      "RiBook3Line",
-      "RiComputerLine",
+      "RiStickyNoteLine",
+      "RiSettings5Line",
       "RiGitBranchLine",
-      "RiSettings5Line"
+      "RiComputerLine",
+      "RiBook3Line"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -25,5 +25,6 @@
   "books": "RiBook3Line",
   "Hexlet/JS": "RiReactjsFill",
   "public": "FasDatabase",
-  "Dev tools/git": "RiGitBranchLine"
+  "Dev tools/git": "RiGitBranchLine",
+  "Progress": "RiStickyNoteLine"
 }
