@@ -803,3 +803,4 @@ const partialApply = (fn, arg1) => (arg2) => fn(arg1, arg2);
 
  Антуан де Сент-Экзюпери
  **Последовательность** — это упорядоченная совокупность объектов данных.
+ [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application), когда не происходит перезагрузки страницы(запрос-ответ), а всё меняется прямо на самом сайте.
