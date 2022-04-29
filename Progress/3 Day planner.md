@@ -908,3 +908,53 @@ export default select;
 ---
 
 #### Важное
+Для колоды из трёх или какого-нибудь другого количества карт надо будет модифицировать функцию. Можно сразу написать более универсальный вариант:
+
+```javascript
+const customRandom = (cardIndex, minIndex, maxIndex) => {
+  return () => {
+    if (cardIndex > maxIndex) {
+      cardIndex = minIndex;
+    }
+
+    const currentIndex = cardIndex;
+    cardIndex += 1;
+    return currentIndex;
+  };
+};
+
+console.log('Выводим индексы с 0 до 2. Начинаем с 0');
+
+const getIndex = customRandom(0, 0, 2);
+
+for (let i = 0; i < 6; i += 1) {
+  console.log(getIndex());
+}
+
+console.log('Выводим индексы с 1 до 5. Начинаем с 2');
+
+const getIndex2 = customRandom(2, 1, 5);
+
+for (let i = 0; i < 10; i += 1) {
+  console.log(getIndex2());
+}
+
+// => Выводим индексы с 0 до 2. Начинаем с 0
+// => 0
+// => 1
+// => 2
+// => 0
+// => 1
+// => 2
+// => Выводим индексы с 1 до 5. Начинаем с 2
+// => 2
+// => 3
+// => 4
+// => 5
+// => 1
+// => 2
+// => 3
+// => 4
+// => 5
+// => 1
+```
