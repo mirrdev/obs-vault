@@ -1110,3 +1110,31 @@ const data1 = await fsp.readFile(inputPath1, 'utf-8');
 const data1 = fsp.readFile(inputPath1, 'utf-8');
 ```
 
+```javascript
+// @ts-check
+
+import { URL } from 'url';
+import axios from 'axios';
+
+const extractLinks = (content) => {
+	const host = 'http://localhost:8080';
+	const linkRx = /href="(.+?)"/ig;
+	const results = content.matchAll(linkRx);
+	return Array.from(results).map((r) => r[1])
+		.map((rawLink) => new URL(rawLink, host).toString());
+
+};
+
+// BEGIN (write your solution here)
+export default async (link) => {
+const { data } = await axios.get(link);
+const links = extractLinks(data).map((href) => axios.get(href)
+	.then(() => null)
+	.catch(() => href));
+const errorLinks = await Promise.all(links);
+return errorLinks.filter((v) => v);
+
+};
+
+// END
+```
