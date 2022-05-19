@@ -1084,7 +1084,7 @@ const promise = fsp.readFile('unknownfile')
 _pending_, _fulfilled_ и _rejected_
 
 
-```
+```javascript
 import fsp from 'fs/promises';
 
 const unionFiles = async (inputPath1, inputPath2, outputPath) => {
@@ -1097,3 +1097,16 @@ const unionFiles = async (inputPath1, inputPath2, outputPath) => {
 ```
 
 Асинхронность в данном случае (как и в промисах) гарантирует нам, что программа не блокируется в ожидании завершения вызовов, она может продолжать делать что-то еще (но не в этой функции). Но она не гарантирует параллельности. Более того, подряд идущие `await` в рамках одной функции всегда выполняются строго друг за другом. Проще всего это понимать, если представлять код как цепочку промисов, где каждая следующая операция выполняется внутри `then`.
+
+Добрый день. Подскажите, пожалуйста. Вот так в data1 результат чтения inputPath1?
+
+```javascript
+const data1 = await fsp.readFile(inputPath1, 'utf-8');
+```
+
+А вот так в data1 промис?
+
+```javascript
+const data1 = fsp.readFile(inputPath1, 'utf-8');
+```
+
