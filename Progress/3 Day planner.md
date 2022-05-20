@@ -1138,3 +1138,9 @@ return errorLinks.filter((v) => v);
 
 // END
 ```
+
+
+Navigator
+Location
+History
+Fetch
