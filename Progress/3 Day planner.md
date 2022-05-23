@@ -1144,3 +1144,10 @@ Navigator
 Location
 History
 Fetch
+
+атрибут и свойство, в общем случае — не одно и то же.
+-   `el.hasAttribute(name)` – проверяет наличие атрибута
+-   `el.getAttribute(name)` – получает значение атрибута
+-   `el.setAttribute(name, value)` – устанавливает атрибут
+-   `el.removeAttribute(name)` – удаляет атрибут
+-   `el.attributes` – список html атрибутов
